@@ -40,5 +40,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'activated_at' => 'datetime', //Carbon instance
     ];
+
+    public function active()
+    {
+        return !is_null($this->activated_at);
+    }
 }

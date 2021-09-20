@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request as RequestAlias;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+
+
+
+Route::group(['middleware'=>['auth','activated']], function (){
+    Route::get('/dashboard', function (RequestAlias $request) {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('activate', function () {
+
+})->name('activate');
 
 require __DIR__.'/auth.php';
