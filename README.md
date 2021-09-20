@@ -16,7 +16,7 @@ There are 2 different invite code options, Unique and Identical.
 
 UPDATE
 
-- ![App Preview](https://i.ibb.co/dLxhmv5/app-rev.png)
+- 
 
 
 In this Laravel App, we are using the Breeze for the authentication. For the user to register in the our app he/she need to has a invite code by other users.
