@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ActivateIndexController;
+use App\Http\Controllers\ActivateStoreController;
 use Illuminate\Http\Request as RequestAlias;
 use Illuminate\Support\Facades\Route;
 
@@ -27,8 +29,7 @@ Route::group(['middleware'=>['auth','activated']], function (){
     })->name('dashboard');
 });
 
-Route::get('activate', function () {
-
-})->name('activate');
+Route::get('/activate', ActivateIndexController::class)->name('activate');
+Route::post('/activate', ActivateStoreController::class)->name('activate.store');
 
 require __DIR__.'/auth.php';
