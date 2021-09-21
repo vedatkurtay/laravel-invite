@@ -11,7 +11,13 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                 @foreach($inviteCodes as $code)
                     <div>
-                        {{ $code->code }} {{ $code->quantity_used }}/{{ $code->quantity }} uses
+                        @if ($code->approved())
+                            {{ $code->code }}
+                            {{ $code->quantity_used }}/{{ $code->quantity }} uses
+                        @else
+                        (Pending) requested {{ \Carbon\Carbon::parse($code->created_at)->format('Y-m-d') }}
+                        @endif
+
                     </div>
                     @endforeach
                 </div>

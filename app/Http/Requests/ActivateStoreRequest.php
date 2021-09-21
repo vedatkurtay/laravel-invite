@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\InviteCode;
+use App\Rules\InviteCodeApproved;
 use App\Rules\InviteCodeHasQuantity;
 use App\Rules\InviteCodeNotExpired;
 use Illuminate\Foundation\Http\FormRequest;
@@ -39,6 +40,7 @@ class ActivateStoreRequest extends FormRequest
                 'bail',
                 new InviteCodeHasQuantity($this->inviteCode),
                 new InviteCodeNotExpired($this->inviteCode),
+                new InviteCodeApproved($this->inviteCode),
             ]
         ];
     }
