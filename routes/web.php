@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActivateIndexController;
 use App\Http\Controllers\ActivateStoreController;
+use App\Http\Controllers\InviteCodeIndexController;
 use Illuminate\Http\Request as RequestAlias;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ Route::group(['middleware'=>['auth','activated']], function (){
     Route::get('/dashboard', function (RequestAlias $request) {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/invites', InviteCodeIndexController::class)->name('invites');
 });
 
 Route::get('/activate', ActivateIndexController::class)->name('activate');

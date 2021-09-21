@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         $this->update(['activated_at' => now()]);
     }
+
+    public function inviteCodes()
+    {
+        return $this->hasMany(InviteCode::class);
+    }
 }

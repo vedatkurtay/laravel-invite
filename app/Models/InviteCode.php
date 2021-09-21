@@ -28,4 +28,5 @@ class InviteCode extends Model
         return $this->expires_at?->lt(now());
     }
 
+
 }
