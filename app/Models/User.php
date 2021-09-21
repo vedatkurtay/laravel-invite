@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(InviteCode::class);
     }
+
+    public function reachedInviteCodeRequestLimit()
+    {
+        return $this->inviteCodes()->count() > 3;
+    }
 }
