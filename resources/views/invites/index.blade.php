@@ -20,7 +20,7 @@
                 @foreach($inviteCodes as $code)
                     <div class="mt-5">
                         @if ($code->approved())
-                           Code: <b>{{ $code->code }}</b>
+                           Code: <b><span x-data x-on:click="window.navigator.clipboard.writeText('$el.innerText')">{{ $code->code }}</span></b>
                             {{ $code->quantity_used }}/{{ $code->quantity }} uses
                         @else
                         (Pending) requested {{ \Carbon\Carbon::parse($code->created_at)->format('Y-m-d') }}
