@@ -17,7 +17,8 @@ class ActivateStoreController extends Controller
 
     public function __invoke(ActivateStoreRequest $request)
     {
-
-        dd('activate');
+        $request->user()->activate();
+        $request->inviteCode->increment('quantity_used');
+        return redirect()->route('dashboard');
     }
 }
