@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivateIndexController;
 use App\Http\Controllers\ActivateStoreController;
 use App\Http\Controllers\InviteCodeIndexController;
+use App\Http\Controllers\InviteCodeStoreController;
 use Illuminate\Http\Request as RequestAlias;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,7 @@ Route::group(['middleware'=>['auth','activated']], function (){
     })->name('dashboard');
 
     Route::get('/invites', InviteCodeIndexController::class)->name('invites');
+    Route::post('/invites', InviteCodeStoreController::class)->name('invites');
 });
 
 Route::get('/activate', ActivateIndexController::class)->name('activate');
