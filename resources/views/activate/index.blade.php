@@ -14,6 +14,7 @@
         <div class="mt-4 ">
             <form method="POST" action="{{ route('activate') }}">
                 @csrf
+
                 <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                 <div>

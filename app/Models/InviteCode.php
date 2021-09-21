@@ -18,4 +18,14 @@ class InviteCode extends Model
       'approved_at' => 'datetime',
     ];
 
+    public function hasAvailableQuantity()
+    {
+        return $this->quantity_used < $this->quantity;
+    }
+
+    public function hasExpired()
+    {
+        return $this->expires_at?->lt(now());
+    }
+
 }
