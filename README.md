@@ -14,9 +14,9 @@ There are 2 different invite code options, Unique and Identical.
 
 ## Installing and Running
 
-UPDATE
+SCREENSHOT of the APP
 
-- 
+<p align="left"><a href="https://github.com/vedatkurtay/laravel-invite" target="_blank"><img src="https://i.ibb.co/F6jrmmk/Screenshot-3.png"></a></p>
 
 
 In this Laravel App, we are using the Breeze for the authentication. For the user to register in the our app he/she need to has a invite code by other users.
